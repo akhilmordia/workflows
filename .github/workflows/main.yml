@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Populate Select Options
-        uses: .github/actions/populate-select.yml
-      - name: Use Select Options (Example)  # Replace with your UI integration steps
+        uses: ./.github/actions/populate-select
+        # uses: ./.github/actions/deploy-frontend-to-s3
+      - name: Use Select Options (Example) # Replace with your UI integration steps
         run: |
           # Access the output variable from the composite action
           echo "Select options: ${{ steps.populate_select.outputs.options }}"
