@@ -8,9 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Populate Select Options
+        id: foo
         uses: ./.github/actions/populate-select
         # uses: ./.github/actions/deploy-frontend-to-s3
-      - name: Use Select Options (Example) # Replace with your UI integration steps
-        run: |
-          # Access the output variable from the composite action
-          echo "Select options: ${{ steps.populate_select.outputs.options }}"
+      - run: echo random-number "$RANDOM_NUMBER"
+        shell: bash
+        env:
+          RANDOM_NUMBER: ${{ steps.foo.outputs.options }}
