@@ -54,7 +54,5 @@ runs:
       shell: bash
       run: |
         echo "name=options::abc,pqr" >> $GITHUB_OUTPUT
-      env: 
-        OPTIONS : "options::abc,pqr"
       # options=$(jq -r '.key1[] | @csv' ${{ inputs.json_file }})
       # echo "::set-output name=options::abc,pqr"
