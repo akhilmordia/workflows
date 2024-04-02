@@ -1119,3 +1119,22 @@ jobs:
           echo ""
         shell: bash
 
+name: Deploy Services
+on:
+  # push: {}
+  workflow_dispatch:  
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        name: Checkout
+      - name: Populate Select Options
+        id: foo
+        uses: ./.github/actions/get-options
+        # uses: action.yml
+      - run: |
+          echo ""
+        shell: bash
+
