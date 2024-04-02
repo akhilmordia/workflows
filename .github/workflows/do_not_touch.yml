@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
+        with:
+          token: ${{ secrets.MY_ACCESS_TOKEN }}
+
       # - name: Run a one-line script
       #   run: echo "Hello World" >> hello.txt
       # - name: switching from HTTPS to SSH
