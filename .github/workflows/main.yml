@@ -9,9 +9,8 @@ jobs:
     steps:
       - name: Populate Select Options
         id: foo
-        # uses: .github/actions/get-options
-        uses: action.yml
-        # uses: ./.github/actions/deploy-frontend-to-s3
+        uses: ../actions/get-options
+        # uses: action.yml
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
