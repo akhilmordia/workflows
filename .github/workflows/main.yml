@@ -13,9 +13,7 @@ jobs:
         id: foo
         uses: ./.github/actions/get-options
         # uses: action.yml
-      - run: 
-          echo random-number "$RANDOM_NUMBER"
-          echo "${{ steps.foo.outputs.RANDOM_NUMBER }}"
-          echo "${{ steps.foo.outputs.RANDOM_NUMBER2 }}"
+      - run: |
+          echo "${{ steps.foo.outputs.options }}"
         shell: bash
         
