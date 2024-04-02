@@ -3,6 +3,8 @@ name: Populate Select Box
 on:
   push: {}
 
+permissions: write-all
+
 jobs:
   build:
     runs-on: ubuntu-latest
