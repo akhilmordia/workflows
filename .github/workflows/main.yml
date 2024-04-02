@@ -11,7 +11,7 @@ jobs:
         name: Checkout
       - name: Populate Select Options
         id: foo
-        uses: ./.github/actions/get-options@main
+        uses: ./.github/actions/get-options
         # uses: action.yml
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
