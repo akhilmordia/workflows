@@ -25,6 +25,9 @@ outputs:
   RANDOM_NUMBER:
     description: "Random number"
     value: ${{ steps.random-number-generator.env.OPTIONS }}
+  RANDOM_NUMBER2:
+    description: "Random number2"
+    value: ${{ steps.random-number-generator.outputs.name }}
 runs:
   using: "composite"
   steps:
@@ -52,7 +55,9 @@ runs:
     - name: Read JSON File
       id: random-number-generator
       shell: bash
-      run: echo "$name=options::abc,pqr"
+      run: 
+        echo "name=options::abc,pqr" >> $GITHUB_OUTPUT
+        echo "$name" 
       env: 
         OPTIONS : "options::abc,pqr"
       # options=$(jq -r '.key1[] | @csv' ${{ inputs.json_file }})
