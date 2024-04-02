@@ -1,0 +1,17 @@
+name: Get Options
+
+inputs:
+  # Input to define how to generate options (optional)
+  source:
+    type: string
+    description: Source for options (e.g., API URL, file path)
+
+outputs:
+  options:
+    type: string
+    description: Comma-separated list of options for select box
+
+runs:
+  uses: ./get_options # Path to your script (replace with actual location)
+  with:
+    source: ${{ inputs.source }} # Pass input if used
