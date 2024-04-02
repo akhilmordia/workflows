@@ -48,8 +48,8 @@ jobs:
 
           EOT
 
-          # git config --global user.name "akhilmordia"
-          # git config --global user.email "akhil.mordia@gmail.com"
+          git config --global user.name "akhilmordia"
+          git config --global user.email "akhil.mordia@gmail.com"
           git add -A
           git commit -m "Update hello.txt"
           git push
