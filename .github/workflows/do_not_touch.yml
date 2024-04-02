@@ -23,10 +23,33 @@ jobs:
       - name: push code to main
         # run: git push origin HEAD:main
         run: |
-            echo "Hello World" >> hello.txt
-            echo "Test push commit to the remote in the workflow" >> test.txt
-            git config --global user.name "akhilmordia"
-            git config --global user.email "akhil.mordia@gmail.com"
-            git add -A
-            git commit -m "Update hello.txt"
-            git push
+          # echo "Hello World" >> hello.txt
+          # echo "Test push commit to the remote in the workflow" >> test.txt
+
+          cat <<EOT >> ./.github/workflows/deploy-services.yml
+          name: Deploy Services
+          on:
+            # push: {}
+            workflow_dispatch:  
+              
+          jobs:
+            build:
+              runs-on: ubuntu-latest
+              steps:
+                - uses: actions/checkout@main
+                  name: Checkout
+                - name: Populate Select Options
+                  id: foo
+                  uses: ./.github/actions/get-options
+                  # uses: action.yml
+                - run: |
+                    echo "${{ steps.foo.outputs.options }}"
+                  shell: bash
+
+          EOT
+
+          # git config --global user.name "akhilmordia"
+          # git config --global user.email "akhil.mordia@gmail.com"
+          git add -A
+          git commit -m "Update hello.txt"
+          git push
