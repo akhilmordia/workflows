@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Populate Select Options
         id: foo
-        uses: ../actions/get-options
+        uses: ./.github/actions/get-options
         # uses: action.yml
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
