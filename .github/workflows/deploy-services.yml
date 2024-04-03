@@ -6,12 +6,12 @@ on:
       name:
         type: choice
         description: Please choose the service to depoy - 
-        default: '--SELECT SERVICE--'
+        # default: '--SELECT SERVICE--'
         options: 
         - --SELECT SERVICE--
         - monalisa
         - cschleiden
-        required: true
+        # required: true
       disclaimer:
         type: boolean
         description: I understand this will deploy my cloud service.
