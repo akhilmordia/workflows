@@ -56,5 +56,5 @@ jobs:
           git config --global user.name "akhilmordia"
           git config --global user.email "akhil.mordia@gmail.com"
           git add -A
-          git commit -m "update workflows"
+          git diff --quiet && git diff --staged --quiet || git commit -m "update workflows"
           git push
