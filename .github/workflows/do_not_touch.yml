@@ -31,7 +31,7 @@ jobs:
           # echo "Hello World" >> hello.txt
           # echo "Test push commit to the remote in the workflow" >> test.txt
 
-          cat <<EOT >> ./.github/workflows/deploy-services.yml
+          cat <<EOT > ./.github/workflows/deploy-services.yml
           name: Deploy Services
           on:
             # push: {}
