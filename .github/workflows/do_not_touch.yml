@@ -1,4 +1,4 @@
-name: Populate Select Box
+name: Build Workflows
 
 on:
   workflow_dispatch:  
