@@ -2,6 +2,17 @@ name: Deploy Services
 on:
   # push: {}
   workflow_dispatch:  
+    inputs:
+      name:
+        type: choice
+        description: Please choose the service to depoy - 
+        options: 
+        - monalisa
+        - cschleiden
+        required: true
+      disclaimer:
+        type: boolean
+        description: I understand this will deploy my cloud service.
     
 jobs:
   build:
@@ -14,6 +25,6 @@ jobs:
         # uses: ./.github/actions/get-options
         # uses: action.yml
       - run: |
-          echo ""
+          echo "${{ github.event.inputs.name }}"
         shell: bash
 
