@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@main
         name: Checkout
-      - name: Populate Select Options
-        id: foo
-        uses: ./.github/actions/get-options
+      # - name: Populate Select Options
+        # id: foo
+        # uses: ./.github/actions/get-options
         # uses: action.yml
       - run: |
           echo ""
